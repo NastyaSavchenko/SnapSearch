@@ -14,6 +14,7 @@ let page = 1;
 let q = null;
 let pages = 0;
 
+
 async function handleFormSubmit(event) {
   event.preventDefault();
   const form = event.currentTarget;
@@ -21,6 +22,9 @@ async function handleFormSubmit(event) {
 
   q = query.value.trim();
   page = 1;
+
+  console.log("pages:", pages)
+  console.log("page:", page)
 
   refs.gallery.innerHTML = '';
   refs.loader.classList.remove('js-is-hidden');
@@ -80,9 +84,7 @@ async function handleFormSubmit(event) {
 }
 
 async function handleLoadMoreClick() {
-  page += 1;
-
-  if (page > pages) {
+  if (page >= pages) {
     refs.loadbtnEl.classList.add('js-is-hidden');
     iziToast.info({
       position: 'topRight',
@@ -92,6 +94,8 @@ async function handleLoadMoreClick() {
     });
     return;
   }
+
+  page += 1;
 
   refs.loader.classList.remove('js-is-hidden');
 
