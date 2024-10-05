@@ -79,51 +79,17 @@
 }
 
 .loader {
-  display: block; 
-  margin: 16px auto; 
-  width: 2em;
-  height: 2em;
+  display: block;
+  margin: 16px auto;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #6c8cff;
+  border-top: 4px solid #fff;
   border-radius: 50%;
-  color: #6c8cff;
-  font-size: 45px;
-  text-indent: -9999em;
-  overflow: hidden;
-  animation: mltShdSpin 1.7s infinite ease, round 1.7s infinite ease;
+  animation: spin 1s linear infinite;
 }
 
-@keyframes mltShdSpin {
-  0% {
-    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em,
-      0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-  }
-  5%,
-  95% {
-    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42ем, 0 -0.83em 0 -0.44em,
-      0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-  }
-  10%,
-  59% {
-    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em,
-      -0.173em -0.812em 0 -0.44em, -0.256em -0.789ем 0 -0.46em,
-      -0.297em -0.775ем 0 -0.477em;
-  }
-  20% {
-    box-shadow: 0 -0.83em 0 -0.4em, -0.338ем -0.758ем 0 -0.42ем,
-      -0.555ем -0.617ем 0 -0.44ем, -0.671ем -0.488ем 0 -0.46ем,
-      -0.749ем -0.34ем 0 -0.477ем;
-  }
-  38% {
-    box-shadow: 0 -0.83ем 0 -0.4ем, -0.377ем -0.74ем 0 -0.42ем,
-      -0.645ем -0.522ем 0 -0.44ем, -0.775ем -0.297ем 0 -0.46ем,
-      -0.82ем -0.09ем 0 -0.477ем;
-  }
-  100% {
-    box-shadow: 0 -0.83ем 0 -0.4ем, 0 -0.83ем 0 -0.42ем, 0 -0.83ем 0 -0.44ем,
-      0 -0.83ем 0 -0.46ем, 0 -0.83ем 0 -0.477ем;
-  }
-}
-
-@keyframes round {
+@keyframes spin {
   0% {
     transform: rotate(0deg);
   }

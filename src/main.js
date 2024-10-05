@@ -101,12 +101,13 @@ async function handleLoadMoreClick() {
     renderImg(hits);
     lightbox.refresh();
 
+    const lastImg = refs.gallery.lastElementChild
+    const imgHeight = lastImg.getBoundingClientRect().height
     window.scrollBy({
-      top:
-        document.querySelector('.gallery-list').getBoundingClientRect().height *
-        2,
+      top: imgHeight * 2,
       behavior: 'smooth',
     });
+    
   } catch (error) {
     iziToast.error({
       position: 'topRight',
