@@ -2,7 +2,6 @@ import axios from 'axios';
 import { BASE_URL, KEY, PER_PAGE } from './config';
 
 export async function fetchImg(params) {
-  console.log(params);
   const options = new URLSearchParams({
     ...params,
     key: KEY,

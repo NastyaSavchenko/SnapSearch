@@ -36,7 +36,7 @@
   background: #6c8cff;
 }
 
-button[data-load='load-btn'] {
+.load-btn {
   display: block;
   margin: 0 auto;
 }
@@ -79,19 +79,15 @@ button[data-load='load-btn'] {
 }
 
 .loader {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: block; 
+  margin: 16px auto; 
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
   color: #6c8cff;
   font-size: 45px;
   text-indent: -9999em;
   overflow: hidden;
-  width: 1em;
-  height: 1em;
-  border-radius: 50%;
-  transform: translateZ(0);
   animation: mltShdSpin 1.7s infinite ease, round 1.7s infinite ease;
 }
 
@@ -102,28 +98,28 @@ button[data-load='load-btn'] {
   }
   5%,
   95% {
-    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em,
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42ем, 0 -0.83em 0 -0.44em,
       0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
   }
   10%,
   59% {
     box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em,
-      -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em,
-      -0.297em -0.775em 0 -0.477em;
+      -0.173em -0.812em 0 -0.44em, -0.256em -0.789ем 0 -0.46em,
+      -0.297em -0.775ем 0 -0.477em;
   }
   20% {
-    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em,
-      -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em,
-      -0.749em -0.34em 0 -0.477em;
+    box-shadow: 0 -0.83em 0 -0.4em, -0.338ем -0.758ем 0 -0.42ем,
+      -0.555ем -0.617ем 0 -0.44ем, -0.671ем -0.488ем 0 -0.46ем,
+      -0.749ем -0.34ем 0 -0.477ем;
   }
   38% {
-    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em,
-      -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em,
-      -0.82em -0.09em 0 -0.477em;
+    box-shadow: 0 -0.83ем 0 -0.4ем, -0.377ем -0.74ем 0 -0.42ем,
+      -0.645ем -0.522ем 0 -0.44ем, -0.775ем -0.297ем 0 -0.46ем,
+      -0.82ем -0.09ем 0 -0.477ем;
   }
   100% {
-    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em,
-      0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    box-shadow: 0 -0.83ем 0 -0.4ем, 0 -0.83ем 0 -0.42ем, 0 -0.83ем 0 -0.44ем,
+      0 -0.83ем 0 -0.46ем, 0 -0.83ем 0 -0.477ем;
   }
 }
 
@@ -141,4 +137,8 @@ button[data-load='load-btn'] {
   line-height: 2;
   letter-spacing: 0.48px;
   text-align: center;
+}
+
+.js-is-hidden {
+  display: none;
 }
