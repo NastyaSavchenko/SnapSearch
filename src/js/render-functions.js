@@ -1,4 +1,6 @@
-const galleryEl = document.querySelector('.gallery-list');
+import { refs } from './refs';
+
+const { gallery } = refs;
 
 function createMarkupLi(img) {
   const {
@@ -40,5 +42,5 @@ function createMarkupLi(img) {
 
 export const renderImg = data => {
   const imgMarkup = data.map(createMarkupLi).join('');
-  galleryEl.insertAdjacentHTML('beforeend', imgMarkup);
+  gallery.insertAdjacentHTML('beforeend', imgMarkup);
 };

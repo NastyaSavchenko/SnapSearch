@@ -15,7 +15,7 @@ body {
 }
 
 main {
-  padding: 36px 156px;
+  padding: 36px 156px 44px;
 }
 
 main:has(.back-link) {
