@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HW11</title>
+    <title>snap_search</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <script type="module" crossorigin src="/SnapSearch/index.js"></script>
-    <link rel="modulepreload" crossorigin href="/SnapSearch/assets/vendor-5ObWk2rO.js">
+    <link rel="modulepreload" crossorigin href="/SnapSearch/assets/vendor-CRCB-GUD.js">
     <link rel="stylesheet" crossorigin href="/SnapSearch/assets/vendor-DumFYO8Z.css">
-    <link rel="stylesheet" crossorigin href="/SnapSearch/assets/index-HnjPdE1L.css">
+    <link rel="stylesheet" crossorigin href="/SnapSearch/assets/index-CorBoC8i.css">
   </head>
   <body>
     <main>
@@ -22,11 +22,15 @@
           type="text"
           placeholder="Search images..."
           required
-        /><button class="search-button" type="submit">Search</button>
+        /><button class="main-button" type="submit">Search</button>
       </form>
 
       <ul class="gallery-list"></ul>
+      <button type="button" class="main-button" data-load="load-btn">
+        Load more
+      </button>
+      <span class="loader"></span>
     </main>
-    <span class="loader"></span>
+
   </body>
 </html>
