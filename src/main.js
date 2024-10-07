@@ -14,7 +14,6 @@ let page = 1;
 let q = null;
 let pages = 0;
 
-
 async function handleFormSubmit(event) {
   event.preventDefault();
   const form = event.currentTarget;
@@ -22,9 +21,6 @@ async function handleFormSubmit(event) {
 
   q = query.value.trim();
   page = 1;
-
-  console.log("pages:", pages)
-  console.log("page:", page)
 
   refs.gallery.innerHTML = '';
   refs.loader.classList.remove('js-is-hidden');
@@ -50,7 +46,12 @@ async function handleFormSubmit(event) {
     pages = Math.ceil(totalHits / PER_PAGE);
 
     refs.loader.classList.add('js-is-hidden');
-    refs.loadbtnEl.classList.remove('js-is-hidden');
+
+    if (pages <= 1) {
+      refs.loadbtnEl.classList.add('js-is-hidden');
+    } else {
+      refs.loadbtnEl.classList.remove('js-is-hidden');
+    }
 
     if (hits.length === 0) {
       iziToast.error({
@@ -84,20 +85,11 @@ async function handleFormSubmit(event) {
 }
 
 async function handleLoadMoreClick() {
-  if (page >= pages) {
-    refs.loadbtnEl.classList.add('js-is-hidden');
-    iziToast.info({
-      position: 'topRight',
-      iconColor: '#FAFAFB',
-      message: `We're sorry, but you've reached the end of search results.`,
-      backgroundColor: '#FF0000',
-    });
-    return;
-  }
-
   page += 1;
-
   refs.loader.classList.remove('js-is-hidden');
+
+  console.log('pages:', pages);
+  console.log('page:', page);
 
   try {
     const params = { q, page };
@@ -105,13 +97,23 @@ async function handleLoadMoreClick() {
     renderImg(hits);
     lightbox.refresh();
 
-    const lastImg = refs.gallery.lastElementChild
-    const imgHeight = lastImg.getBoundingClientRect().height
+    if (page === pages) {
+      refs.loadbtnEl.classList.add('js-is-hidden');
+      iziToast.info({
+        position: 'topRight',
+        iconColor: '#FAFAFB',
+        message: `We're sorry, but you've reached the end of search results.`,
+        backgroundColor: '#FF0000',
+      });
+      return;
+    }
+
+    const lastImg = refs.gallery.lastElementChild;
+    const imgHeight = lastImg.getBoundingClientRect().height;
     window.scrollBy({
       top: imgHeight * 2,
       behavior: 'smooth',
     });
-    
   } catch (error) {
     iziToast.error({
       position: 'topRight',
