@@ -88,9 +88,6 @@ async function handleLoadMoreClick() {
   page += 1;
   refs.loader.classList.remove('js-is-hidden');
 
-  console.log('pages:', pages);
-  console.log('page:', page);
-
   try {
     const params = { q, page };
     const { hits } = await fetchImg(params);
